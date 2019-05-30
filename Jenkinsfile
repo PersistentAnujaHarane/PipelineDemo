@@ -19,7 +19,6 @@ pipeline {
     }
      
       
-}
 stage('Docker Build'){
     steps{
         withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry-1.docker.io/v2/') {
