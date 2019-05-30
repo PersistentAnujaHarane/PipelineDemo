@@ -21,11 +21,10 @@ pipeline {
       
 stage('Docker Build'){
     steps{
-        withDockerRegistry(credentialsId: 'dockerhub', url: 'https://registry-1.docker.io/v2/') {
+       sh "docker login -u anujaharane -p Anizhe7433  https://registry-1.docker.io/v2/ "
       sh "docker build . -t helloworld:2.0"
       sh "docker push anujaharane/test"
-        }
-
+    
 
   }}
 }
