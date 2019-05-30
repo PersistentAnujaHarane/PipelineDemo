@@ -19,7 +19,7 @@ pipeline {
      
 stage('Docker Build'){
     steps{
-        {tools docker "Docker"}
+        
       sh "docker build . -t anujaharane/test:"+${env.BUILD_NUMBER}
       sh "docker push anujaharane/test"
   }}
