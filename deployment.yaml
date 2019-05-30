@@ -14,5 +14,5 @@ spec:
         image: docker.io/anujaharane/test:1.0
         imagePullPolicy: Always
         ports:
-        - containerPort: 8000
+        - containerPort: 3000
 # vim: set ts=2 expandtab!:
