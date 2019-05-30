@@ -1,6 +1,6 @@
 
 pipeline {
-  agent any
+  agent { dockerfile true }
     
   stages {
         
@@ -19,13 +19,9 @@ pipeline {
      
 stage('Docker Build'){
     steps{
-        withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
-    // some block
-       sh "docker login -u anujaharane -p Anizhe7433  https://registry-1.docker.io/v2/ "
+        {tools docker "Docker"}
       sh "docker build . -t anujaharane/test:"+${env.BUILD_NUMBER}
       sh "docker push anujaharane/test"
-        }
-
   }}
 }
 }
