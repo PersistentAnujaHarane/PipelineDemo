@@ -1,17 +1,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: restapinode
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: restapinode
     spec:
       containers:
-      - name: nodeapp
-        image: docker.io/anujaharane/test:3.0
+      - name: restapinode
+        image: docker.io/anujaharane/test:4.0
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
